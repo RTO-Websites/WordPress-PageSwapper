@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://github.com/sh2306
+ * @link       https://github.com/crazypsycho
  * @since      1.0.0
  *
  * @package    PageSwapper

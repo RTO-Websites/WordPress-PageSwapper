@@ -5,7 +5,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://github.com/sh2306
+ * @link       https://github.com/crazypsycho
  * @since      1.0.0
  *
  * @package    PageSwapper

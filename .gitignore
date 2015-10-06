@@ -1,2 +1,4 @@
 trunk/vendor
 trunk/bower_components
+.svn
+.idea

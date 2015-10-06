@@ -9,7 +9,7 @@ use Pub\PageSwapperPublic;
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://github.com/sh2306
+ * @link       https://github.com/crazypsycho
  * @since      1.0.0
  *
  * @package    PageSwapper

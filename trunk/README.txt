@@ -1,6 +1,6 @@
 === Plugin Name ===
-Contributors: sh2306
-Donate link: https://github.com/sh2306
+Contributors: crazypsycho
+Donate link: https://github.com/crazypsycho
 Tags: page transition, page animation, slider, ajax
 Requires at least: 3.0.1
 Tested up to: 4.3
@@ -21,7 +21,7 @@ http://www.owlcarousel.owlgraphic.com/
 
 
 You can help to develop on
-https://github.com/sh2306/WordPress-PageSwapper
+https://github.com/crazypsycho/WordPress-PageSwapper
 
 
 == Installation ==
