@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "791c4f82ff2e8dfd442c8d7d50b2141e",
+    "packages": [
+        {
+            "name": "r4c00n/magic-admin-page",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/R4c00n/MagicAdminPage.git",
+                "reference": "fb579874392f5062ff9128666d6531f2f3c99b48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/R4c00n/MagicAdminPage/zipball/fb579874392f5062ff9128666d6531f2f3c99b48",
+                "reference": "fb579874392f5062ff9128666d6531f2f3c99b48",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MagicAdminPage\\": "src/MagicAdminPage"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "R4c00n",
+                    "email": "marcel.kempf93@gmail.com"
+                }
+            ],
+            "description": "Helper class to generate WordPress admin pages.",
+            "homepage": "https://github.com/R4c00n/MagicAdminPage",
+            "keywords": [
+                "wordpress",
+                "wp-admin"
+            ],
+            "time": "2015-09-04 08:15:20"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

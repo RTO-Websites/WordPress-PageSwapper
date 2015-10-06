@@ -1,0 +1,12 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.owl-carousel.psw-container .owl-item img {
+    width: auto;
+}
+
+.psw-container .owl-carousel .owl-item img {
+    width: 100%;
+}

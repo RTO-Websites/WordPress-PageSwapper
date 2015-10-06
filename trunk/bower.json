@@ -1,0 +1,25 @@
+{
+  "name": "PageSwapper",
+  "version": "1.0.0",
+  "authors": [
+    "shennemann <s.hennemann@rto.de>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "~3.4.0",
+    "page-swapper": "*",
+    "owl.carousel": "~2.0.0-beta.3"
+  }
+}

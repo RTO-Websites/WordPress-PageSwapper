@@ -1,0 +1,13 @@
+{
+  "require": {
+    "r4c00n/magic-admin-page": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Inc\\": "includes",
+      "Admin\\": "admin/",
+      "Pub\\": "public/",
+      "Lib\\": "lib/"
+    }
+  }
+}
