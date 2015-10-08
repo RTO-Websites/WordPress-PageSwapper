@@ -32,6 +32,9 @@ You can also select a specific element with a css-selector, so only this element
 
 
 == Changelog ==
+= 1.0.2 =
+* Add example to settings
+* Fix some issues in javascript
 
 = 1.0.1 =
 * Better docs, banner, icon and screenshot
