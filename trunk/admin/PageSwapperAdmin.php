@@ -85,7 +85,14 @@ class PageSwapperAdmin
             </a>
         </div>'
             ),
-        ) );
+            'owlExamples' => array (
+                'type'        => 'description',
+                'title'       => __( 'Examples', TextDomain ),
+                'description' => "<i><pre>animateOut: 'zoomOut',
+ animateIn: 'zoomIn'</i></pre><br />Transition with zoomIn and out instead of slide".
+                    "<br /><br /><i><pre></pre></i>"
+            ),
+        ));
     }
 
     /**
