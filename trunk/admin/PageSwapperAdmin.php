@@ -51,6 +51,8 @@ class PageSwapperAdmin
      */
     public function __construct( $pluginName, $version )
     {
+        load_plugin_textdomain( 'page-swapper', false, '/page-swapper/languages' );
+        $textdomain = 'page-swapper';
 
         $this->pluginName = $pluginName;
         $this->version = $version;
@@ -62,37 +64,43 @@ class PageSwapperAdmin
         );
 
         $pswAdminPage->addFields( array (
-            'selector' => array (
-                'type'  => 'text',
-                'title' => __( 'Selector', TextDomain ),
+            'debugmode'   => array (
+                'type'    => 'checkbox',
+                'title'   => __( 'Debug-Mode', $textdomain ),
                 'default' => 'body',
             ),
-            'owlConfig' => array (
-                'type'  => 'textarea',
-                'title' => __( 'Owl-Config', TextDomain ),
+            'selector'    => array (
+                'type'    => 'text',
+                'title'   => __( 'Selector', $textdomain ),
+                'default' => 'body',
             ),
-            'owlDesc'   => array (
+            'owlConfig'   => array (
+                'type'        => 'textarea',
+                'title'       => __( 'Owl-Slider-Config', $textdomain ),
+                'description' => '<b>' . __( 'Presets', $textdomain ) . '</b>:'
+                    . '<select id="owl-slider-presets" data-lang="' . get_locale() . '">
+                    <option value="">Slide (' . __( 'Default', $textdomain ) . ')</option>
+                    <option value="fade">Fade</option>
+                    <option value="slidevertical">SlideVertical</option>
+                    <option value="zoominout">Zoom In/out</option>
+                    </select>',
+                'class'       => 'owl-slider-config',
+            ),
+            'owlDesc'     => array (
                 'type'        => 'description',
-                'title'       => __( 'Description', TextDomain ),
-                'description' => __( 'You can use these options', TextDomain ) . ':<br />' .
+                'title'       => __( 'Description', $textdomain ),
+                'description' => __( 'You can use these options', $textdomain ) . ':<br />' .
                     '<a href="http://www.owlcarousel.owlgraphic.com/docs/api-options.html" target="_blank">
                 OwlCarousel Options
             </a>
             <br />' .
-                    __( 'You can use these animations', TextDomain ) . ':<br />
+                    __( 'You can use these animations', $textdomain ) . ':<br />
             <a href="http://daneden.github.io/animate.css/" target="_blank">
                 Animate.css
             </a>
         </div>'
             ),
-            'owlExamples' => array (
-                'type'        => 'description',
-                'title'       => __( 'Examples', TextDomain ),
-                'description' => "<i><pre>animateOut: 'zoomOut',
- animateIn: 'zoomIn'</i></pre><br />Transition with zoomIn and out instead of slide".
-                    "<br /><br /><i><pre></pre></i>"
-            ),
-        ));
+        ) );
     }
 
     /**

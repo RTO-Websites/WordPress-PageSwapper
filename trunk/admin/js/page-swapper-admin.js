@@ -29,4 +29,31 @@
 	 * be doing this, we should try to minimize doing that in our own work.
 	 */
 
+	/**
+	 * DOM-Ready
+	 */
+	$(function() {
+		/**
+		 * Set owl-config via presets
+		 */
+		$('#owl-slider-presets').on('change', function(e) {
+			var owlConfigElement = $('#owlConfig-' + $('#owl-slider-presets').data('lang'));
+			switch ($('#owl-slider-presets').val()) {
+				case 'fade':
+					owlConfigElement.val("animateOut: 'fadeOut',\nanimateIn: 'fadeIn',");
+					break;
+				case 'slidevertical':
+					owlConfigElement.val("animateOut: 'slideOutDown',\nanimateIn: 'slideInDown',");
+					break;
+				case 'zoominout':
+					owlConfigElement.val("animateOut: 'zoomOut',\nanimateIn: 'zoomIn',");
+					break;
+				case '':
+					owlConfigElement.val('');
+					break;
+
+			}
+		});
+	});
+
 })( jQuery );
