@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PageSwapper v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-26 15:54+0100\n"
+"PO-Revision-Date: 2015-10-09 09:38+0100\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-Basepath: .\n"
+"Last-Translator: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+msgid "Debug-Mode"
+msgstr "Debug-Modus"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Selector"
+msgstr "Selector"
+
+msgid "Javascript Callbacks"
+msgstr "Javascript Callbacks"
+
+msgid "Owl-Slider-Config"
+msgstr "Owl-Slider-Konfiguration"
+
+msgid "Presets"
+msgstr "Vorlagen"
+
+msgid "Example"
+msgstr "Beispiel"
+
+msgid "Examples"
+msgstr "Beispiele"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "You can use these options"
+msgstr "Du kannst diese Optionen verwenden:"
+
+msgid "You can use these animations"
+msgstr "Du kannst diese Animationen verwenden:"
