@@ -59,6 +59,9 @@ args has the following information:
 
 
 == Changelog ==
+= 1.0.4 =
+* Fix wrong height if images in content
+
 = 1.0.3 =
 * Fix error on minified javascript
 * Works now with body as selector
