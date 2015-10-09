@@ -72,7 +72,7 @@ class PageSwapper {
 	public function __construct() {
 
 		$this->pluginName = 'page-swapper';
-		$this->version = '1.0.0';
+		$this->version = '1.0.3';
 
 		$this->loadDependencies();
 		$this->setLocale();
