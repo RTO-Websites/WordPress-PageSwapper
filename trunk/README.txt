@@ -30,8 +30,39 @@ Just install and activate the plugin. Then your body use page-transitions.
 You can also select a specific element with a css-selector, so only this element will be animated.
 
 
+= Javascript-Callbacks =
+The following callbacks are available:
+´´´
+psw-beforeopen
+psw-loadstart
+psw-loadcomplete
+´´´
+
+So can you trigger it:
+´´´
+$('.psw-container').on('pws-loadcomplete', function(e, args) {
+    console.info(args);
+}
+´´´
+
+args has the following information:
+´´´
+'container' : container,
+'args': args,
+'oldTab' : oldTab,
+'newTab' : newTab,
+´´´
+
 
 == Changelog ==
+= 1.0.3 =
+* Fix error on minified javascript
+* Works now with body as selector
+* Add presets
+* Add debug-mode
+* Add german-translation
+* Add javascript-callbacks to readme
+
 = 1.0.2 =
 * Add example to settings
 * Fix some issues in javascript
