@@ -53,6 +53,10 @@ args has the following information:
 'newTab' : newTab,
 ´´´
 
+== Screenshots ==
+
+1. This screenshot shows the admin-section
+
 
 == Changelog ==
 = 1.0.3 =
@@ -62,6 +66,7 @@ args has the following information:
 * Add debug-mode
 * Add german-translation
 * Add javascript-callbacks to readme
+* Add screenshot
 
 = 1.0.2 =
 * Add example to settings
