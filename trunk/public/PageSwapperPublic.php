@@ -43,6 +43,15 @@ class PageSwapperPublic
     private $version;
 
     /**
+     * The options from admin-page
+     *
+     * @since       1.0.3
+     * @access      private
+     * @var         array[]
+     */
+    private $options;
+
+    /**
      * Initialize the class and set its properties.
      *
      * @since    1.0.0
@@ -54,6 +63,7 @@ class PageSwapperPublic
 
         $this->pluginName = $pluginName;
         $this->version = $version;
+        $this->options = MagicAdminPage::getOption('page-swapper');
 
         // Embed footerscript
         add_action( 'wp_footer', array ( $this, 'insertFooterScript' ) );
@@ -114,7 +124,12 @@ class PageSwapperPublic
 
 
         $pswPath = plugin_dir_url( __FILE__ ) . '../bower_components/page-swapper';
-        wp_enqueue_script( 'page-swapper', $pswPath . '/page-swapper.min.js', array ( 'owl.carousel' ) );
+
+        if ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') {
+            wp_enqueue_script( 'page-swapper', $pswPath . '/page-swapper.js', array ( 'owl.carousel' ) );
+        } else {
+            wp_enqueue_script( 'page-swapper', $pswPath . '/page-swapper.min.js', array ( 'owl.carousel' ) );
+        }
     }
 
     /**
@@ -132,14 +147,20 @@ class PageSwapperPublic
         }
 
         // get options
-        $options = MagicAdminPage::getOption('page-swapper');
+        $options = $this->options;
         $selector = !empty($options['selector']) ? $options['selector'] : 'body';
         $owlConfig = !empty($options['owlConfig']) ? $options['owlConfig'] : '';
+
+        $debug = false;
+        if ( ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') ||
+            isset( $_REQUEST['pswdebug'] ) ) {
+            $debug = true;
+        }
 
         $script = '<script>';
         $script .= 'jQuery("' . $selector . '").pageSwapper({
             owlConfig: {' . $owlConfig . '},
-            ' . ( isset( $_REQUEST['pswdebug'] ) ? 'debug: true' : '' ) . '
+            ' . ( $debug ? 'debug: true' : '' ) . '
         });';
         $script .= '</script>';
 
