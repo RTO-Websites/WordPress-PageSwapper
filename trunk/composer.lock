@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "791c4f82ff2e8dfd442c8d7d50b2141e",
+    "hash": "477d22a61fe16b5936d4f108ffe7f978",
     "packages": [
         {
             "name": "r4c00n/magic-admin-page",
-            "version": "v1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/R4c00n/MagicAdminPage.git",
-                "reference": "fb579874392f5062ff9128666d6531f2f3c99b48"
+                "reference": "9deb858a588d25f8a77bd73e456ac6e0a8bbf41c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/R4c00n/MagicAdminPage/zipball/fb579874392f5062ff9128666d6531f2f3c99b48",
-                "reference": "fb579874392f5062ff9128666d6531f2f3c99b48",
+                "url": "https://api.github.com/repos/R4c00n/MagicAdminPage/zipball/9deb858a588d25f8a77bd73e456ac6e0a8bbf41c",
+                "reference": "9deb858a588d25f8a77bd73e456ac6e0a8bbf41c",
                 "shasum": ""
             },
             "require": {
@@ -45,13 +45,15 @@
                 "wordpress",
                 "wp-admin"
             ],
-            "time": "2015-09-04 08:15:20"
+            "time": "2015-10-26 13:38:58"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "r4c00n/magic-admin-page": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,6 +1,6 @@
 {
   "require": {
-    "r4c00n/magic-admin-page": "*"
+    "r4c00n/magic-admin-page": "dev-master"
   },
   "autoload": {
     "psr-4": {
