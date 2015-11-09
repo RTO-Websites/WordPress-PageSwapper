@@ -7,3 +7,16 @@ https://wordpress.org/plugins/page-swapper/
 You can see it in action on my private website:
 http://hennewelt.de
 
+
+# Install
+### Requirements
+- Composer (https://getcomposer.org/)
+- [npm bower](http://bower.io/)
+
+### Run this
+```
+cd trunk
+bower install
+composer install
+```
+
