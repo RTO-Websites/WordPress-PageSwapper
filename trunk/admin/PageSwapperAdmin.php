@@ -67,7 +67,10 @@ class PageSwapperAdmin
             'debugmode'   => array (
                 'type'    => 'checkbox',
                 'title'   => __( 'Debug-Mode', $textdomain ),
-                'default' => 'body',
+            ),
+            'useOldOwl'   => array (
+                'type'    => 'checkbox',
+                'title'   => __( 'Use old owl-carousel (v1.3)', $textdomain ),
             ),
             'selector'    => array (
                 'type'    => 'text',

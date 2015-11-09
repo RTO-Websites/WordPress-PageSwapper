@@ -59,6 +59,9 @@ args has the following information:
 
 
 == Changelog ==
+= 1.0.5 =
+* Add support for owl 1.x
+
 = 1.0.4 =
 * Fix wrong height if images in content
 

@@ -10,3 +10,7 @@
 .psw-container .owl-carousel .owl-item img {
     width: 100%;
 }
+
+.psw-container > .owl-controls {
+    display: none !important;
+}

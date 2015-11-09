@@ -1,6 +1,6 @@
 {
   "name": "PageSwapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "shennemann <s.hennemann@rto.de>"
   ],
@@ -18,6 +18,7 @@
     "tests"
   ],
   "dependencies": {
+    "owlcarousel": "~1.3.2",
     "animate.css": "~3.4.0",
     "page-swapper": "*",
     "owl.carousel": "~2.0.0-beta.3"
