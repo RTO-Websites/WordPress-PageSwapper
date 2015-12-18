@@ -21,8 +21,7 @@ use MagicAdminPage\MagicAdminPage;
  * @subpackage PageSwapper/admin
  * @author     Sascha Hennemann <shennemann@rto.de>
  */
-class PageSwapperAdmin
-{
+class PageSwapperAdmin {
 
     /**
      * The ID of this plugin.
@@ -49,8 +48,7 @@ class PageSwapperAdmin
      * @param      string $pluginName The name of this plugin.
      * @param      string $version The version of this plugin.
      */
-    public function __construct( $pluginName, $version )
-    {
+    public function __construct( $pluginName, $version ) {
         load_plugin_textdomain( 'page-swapper', false, '/page-swapper/languages' );
         $textdomain = 'page-swapper';
 
@@ -63,23 +61,23 @@ class PageSwapperAdmin
             'PageSwapper'
         );
 
-        $pswAdminPage->addFields( array (
-            'debugmode'   => array (
-                'type'    => 'checkbox',
-                'title'   => __( 'Debug-Mode', $textdomain ),
+        $pswAdminPage->addFields( array(
+            'debugmode' => array(
+                'type' => 'checkbox',
+                'title' => __( 'Debug-Mode', $textdomain ),
             ),
-            'useOldOwl'   => array (
-                'type'    => 'checkbox',
-                'title'   => __( 'Use old owl-carousel (v1.3)', $textdomain ),
+            'useOldOwl' => array(
+                'type' => 'checkbox',
+                'title' => __( 'Use old owl-carousel (v1.3)', $textdomain ),
             ),
-            'selector'    => array (
-                'type'    => 'text',
-                'title'   => __( 'Selector', $textdomain ),
+            'selector' => array(
+                'type' => 'text',
+                'title' => __( 'Selector', $textdomain ),
                 'default' => 'body',
             ),
-            'owlConfig'   => array (
-                'type'        => 'textarea',
-                'title'       => __( 'Owl-Slider-Config', $textdomain ),
+            'owlConfig' => array(
+                'type' => 'textarea',
+                'title' => __( 'Owl-Slider-Config', $textdomain ),
                 'description' => '<b>' . __( 'Presets', $textdomain ) . '</b>:'
                     . '<select id="owl-slider-presets" data-lang="' . get_locale() . '">
                     <option value="">Slide (' . __( 'Default', $textdomain ) . ')</option>
@@ -87,11 +85,11 @@ class PageSwapperAdmin
                     <option value="slidevertical">SlideVertical</option>
                     <option value="zoominout">Zoom In/out</option>
                     </select>',
-                'class'       => 'owl-slider-config',
+                'class' => 'owl-slider-config',
             ),
-            'owlDesc'     => array (
-                'type'        => 'description',
-                'title'       => __( 'Description', $textdomain ),
+            'owlDesc' => array(
+                'type' => 'description',
+                'title' => __( 'Description', $textdomain ),
                 'description' => __( 'You can use these options', $textdomain ) . ':<br />' .
                     '<a href="http://www.owlcarousel.owlgraphic.com/docs/api-options.html" target="_blank">
                 OwlCarousel Options
@@ -101,7 +99,7 @@ class PageSwapperAdmin
             <a href="http://daneden.github.io/animate.css/" target="_blank">
                 Animate.css
             </a>
-        </div>'
+        </div>',
             ),
         ) );
     }
@@ -111,8 +109,7 @@ class PageSwapperAdmin
      *
      * @since    1.0.0
      */
-    public function enqueueStyles()
-    {
+    public function enqueueStyles() {
 
         /**
          * This function is provided for demonstration purposes only.
@@ -126,7 +123,7 @@ class PageSwapperAdmin
          * class.
          */
 
-        wp_enqueue_style( $this->pluginName, plugin_dir_url( __FILE__ ) . 'css/page-swapper-admin.css', array (), $this->version, 'all' );
+        wp_enqueue_style( $this->pluginName, plugin_dir_url( __FILE__ ) . 'css/page-swapper-admin.css', array(), $this->version, 'all' );
 
     }
 
@@ -135,8 +132,7 @@ class PageSwapperAdmin
      *
      * @since    1.0.0
      */
-    public function enqueueScripts()
-    {
+    public function enqueueScripts() {
 
         /**
          * This function is provided for demonstration purposes only.
@@ -150,7 +146,7 @@ class PageSwapperAdmin
          * class.
          */
 
-        wp_enqueue_script( $this->pluginName, plugin_dir_url( __FILE__ ) . 'js/page-swapper-admin.js', array ( 'jquery' ), $this->version, false );
+        wp_enqueue_script( $this->pluginName, plugin_dir_url( __FILE__ ) . 'js/page-swapper-admin.js', array( 'jquery' ), $this->version, false );
 
     }
 

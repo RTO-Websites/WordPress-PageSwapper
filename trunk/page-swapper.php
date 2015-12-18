@@ -24,8 +24,8 @@ use MagicAdminPage\MagicAdminPage;
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if ( !defined( 'WPINC' ) ) {
+    die;
 }
 
 /**
@@ -38,7 +38,7 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
  * This action is documented in includes/PageSwapperActivator.php
  */
 function activatePageSwapper() {
-	PageSwapperActivator::activate();
+    PageSwapperActivator::activate();
 }
 
 /**
@@ -46,7 +46,7 @@ function activatePageSwapper() {
  * This action is documented in includes/PageSwapperDeactivator.php
  */
 function deactivatePageSwapper() {
-	PageSwapperDeactivator::deactivate();
+    PageSwapperDeactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activatePageSwapper' );
@@ -63,8 +63,9 @@ register_deactivation_hook( __FILE__, 'deactivatePageSwapper' );
  */
 function runPageSwapper() {
 
-	$plugin = new PageSwapper();
-	$plugin->run();
+    $plugin = new PageSwapper();
+    $plugin->run();
 
 }
+
 runPageSwapper();

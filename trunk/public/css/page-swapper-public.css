@@ -4,10 +4,12 @@
  */
 
 .owl-carousel.psw-container .owl-item img {
+    display: inline-block;
     width: auto;
 }
 
 .psw-container .owl-carousel .owl-item img {
+    display: block;
     width: 100%;
 }
 
