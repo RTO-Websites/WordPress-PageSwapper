@@ -12,11 +12,14 @@ http://hennewelt.de
 ### Requirements
 - Composer (https://getcomposer.org/)
 - [npm bower](http://bower.io/)
+- Grunt (http://gruntjs.com/)
 
 ### Run this
 ```
 cd trunk
 bower install
 composer install
+npm install
+grunt
 ```
 
