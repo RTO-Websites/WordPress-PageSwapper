@@ -91,19 +91,19 @@ class PageSwapperPublic
 
         wp_enqueue_style( $this->pluginName, plugin_dir_url( __FILE__ ) . 'css/page-swapper-public.css', array(), $this->version, 'all' );
 
+        $buildPath = plugin_dir_url( __FILE__ ) . '../build';
+
         if ( !empty( $this->options['useOldOwl'] ) ) {
             // owl 1
-            $owlPath = plugin_dir_url( __FILE__ ) . '../bower_components/owlcarousel/owl-carousel';
-            wp_enqueue_style( 'owl.carousel', $owlPath . '/owl.carousel.css' );
-            wp_enqueue_style( 'owl.carousel.theme', $owlPath . '/owl.theme.css' );
-            wp_enqueue_style( 'owl.carousel.transitions', $owlPath . '/owl.transitions.css' );
+            wp_enqueue_style( 'owl.carousel', $buildPath . '/css/owl.carousel-v1.css' );
+            wp_enqueue_style( 'owl.carousel.theme', $buildPath . '/css/owl.theme-v1.css' );
+            wp_enqueue_style( 'owl.carousel.transitions', $buildPath . '/css/owl.transition-v1.css' );
         } else {
             // owl 2
-            $owlPath = plugin_dir_url( __FILE__ ) . '../bower_components/owl.carousel/dist';
-            wp_enqueue_style( 'owl.carousel', $owlPath . '/assets/owl.carousel.min.css' );
-            wp_enqueue_style( 'owl.carousel.theme', $owlPath . '/assets/owl.theme.default.min.css' );
+            wp_enqueue_style( 'owl.carousel', $buildPath . '/css/owl.carousel.min.css' );
+            wp_enqueue_style( 'owl.carousel.theme', $buildPath . '/css/owl.theme.default.min.css' );
         }
-        wp_enqueue_style( 'animate.css', plugin_dir_url( __FILE__ ) . '../bower_components/animate.css/animate.min.css' );
+        wp_enqueue_style( 'animate.css', $buildPath .  '/css/animate.min.css' );
     }
 
     /**
@@ -128,22 +128,18 @@ class PageSwapperPublic
 
         #wp_enqueue_script( $this->pluginName, plugin_dir_url( __FILE__ ) . 'js/page-swapper-public.js', array( 'jquery' ), $this->version, false );
 
+        $buildPath = plugin_dir_url( __FILE__ ) . '../build';
 
         if ( !empty( $this->options['useOldOwl'] ) ) {
-            $owlPath = plugin_dir_url( __FILE__ ) . '../bower_components/owlcarousel/owl-carousel';
-            wp_enqueue_script( 'owl.carousel', $owlPath . '/owl.carousel.min.js', array ( 'jquery' ) );
+            wp_enqueue_script( 'owl.carousel', $buildPath . '/js/owl.carousel-v1.min.js', array( 'jquery' ) );
         } else {
-            $owlPath = plugin_dir_url( __FILE__ ) . '../bower_components/owl.carousel/dist';
-            wp_enqueue_script( 'owl.carousel', $owlPath . '/owl.carousel.min.js', array ( 'jquery' ) );
+            wp_enqueue_script( 'owl.carousel', $buildPath . '/js/owl.carousel.min.js', array( 'jquery' ) );
         }
 
-
-        $pswPath = plugin_dir_url( __FILE__ ) . '../bower_components/page-swapper';
-
         if ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') {
-            wp_enqueue_script( 'page-swapper', $pswPath . '/page-swapper.js', array ( 'owl.carousel' ) );
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.js', array ( 'owl.carousel' ) );
         } else {
-            wp_enqueue_script( 'page-swapper', $pswPath . '/page-swapper.min.js', array ( 'owl.carousel' ) );
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.min.js', array ( 'owl.carousel' ) );
         }
     }
 

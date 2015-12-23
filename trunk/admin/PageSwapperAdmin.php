@@ -58,7 +58,9 @@ class PageSwapperAdmin {
         $pswAdminPage = new MagicAdminPage(
             'page-swapper',
             'PageSwapper',
-            'PageSwapper'
+            'PageSwapper',
+            null,
+            'dashicons-admin-page'
         );
 
         $pswAdminPage->addFields( array(
