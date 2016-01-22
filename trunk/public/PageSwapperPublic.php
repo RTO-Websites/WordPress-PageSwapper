@@ -163,11 +163,16 @@ class PageSwapperPublic
         $owlConfig = !empty($options['owlConfig']) ? $options['owlConfig'] : '';
         $oldOwl = !empty($options['useOldOwl']) ? 'owlVersion: 1,' : '';
 
-            $debug = false;
+        $debug = false;
+
         if ( ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') ||
             isset( $_REQUEST['pswdebug'] ) ) {
             $debug = true;
         }
+
+        // minify
+        $owlConfig = preg_replace("/^\s{2,}?([^,]+?),?$/m", ',', $owlConfig);
+        $owlConfig = preg_replace("/(\r?\n?)*/", '', $owlConfig);
 
         $script = '<script>';
         $script .= 'jQuery("' . $selector . '").pageSwapper({
