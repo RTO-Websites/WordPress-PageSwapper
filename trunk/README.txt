@@ -32,26 +32,29 @@ You can also select a specific element with a css-selector, so only this element
 
 = Javascript-Callbacks =
 The following callbacks are available:
-```
+
+`
 psw-beforeopen
 psw-loadstart
 psw-loadcomplete
-```
+`
 
 So can you trigger it:
-```
+
+`
 $('.psw-container').on('pws-loadcomplete', function(e, args) {
     console.info(args);
 }
-```
+`
 
 args has the following information:
-```
+
+`
 'container' : container,
 'args': args,
 'oldTab' : oldTab,
 'newTab' : newTab,
-```
+`
 
 == Screenshots ==
 
