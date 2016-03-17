@@ -137,9 +137,9 @@ class PageSwapperPublic
         }
 
         if ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') {
-            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.js', array ( 'owl.carousel' ) );
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.js', array ( 'owl.carousel' ), $this->version, true );
         } else {
-            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.min.js', array ( 'owl.carousel' ) );
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.min.js', null, $this->version, true );
         }
     }
 
@@ -175,11 +175,11 @@ class PageSwapperPublic
         $owlConfig = preg_replace("/(\r?\n?)*/", '', $owlConfig);
 
         $script = '<script>';
-        $script .= 'jQuery("' . $selector . '").pageSwapper({
+        $script .= 'jQuery(function($) {$("' . $selector . '").pageSwapper({
             owlConfig: {' . $owlConfig . '},
             ' . ( $debug ? 'debug: true,' : '' ) .
             $oldOwl . '
-        });';
+        });});';
         $script .= '</script>';
 
         $footer = $footer . $script;
