@@ -1,27 +1,21 @@
 {
-  "name": "post-gallery",
-  "version": "1.0.0",
-  "description": "Gallery-Plugin for Wordpress",
+  "name": "page-swapper",
+  "version": "1.0.8",
+  "description": "Ajax-Site-Transition for Wordpress",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/crazypsycho/post-gallery"
+    "url": "https://github.com/crazypsycho/WordPress-PageSwapper"
   },
   "keywords": [
     "mbv",
     "wordpress",
     "plugin",
-    "php",
-    "html5",
-    "css3",
-    "Sass",
-    "js",
-    "CoffeeScript",
-    "foundation",
-    "grunt"
+    "ajax",
+    "site transition"
   ],
   "author": "Sascha Hennemann",
   "license": "MIT",
