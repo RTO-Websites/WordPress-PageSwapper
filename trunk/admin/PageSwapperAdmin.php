@@ -103,6 +103,11 @@ class PageSwapperAdmin {
             </a>
         </div>',
             ),
+
+            'disableHash' => array(
+                'type' => 'checkbox',
+                'title' => __( 'Disable hash', $textdomain ),
+            ),
         ) );
     }
 

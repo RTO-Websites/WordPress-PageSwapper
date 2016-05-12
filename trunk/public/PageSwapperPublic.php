@@ -177,8 +177,9 @@ class PageSwapperPublic
         $script = '<script>';
         $script .= 'jQuery(function($) {$("' . $selector . '").pageSwapper({
             owlConfig: {' . $owlConfig . '},
-            ' . ( $debug ? 'debug: true,' : '' ) .
-            $oldOwl . '
+            ' . ( $debug ? 'debug: true,' : '' )
+            . !empty( $this->options['disableHash'] ) ? 'disableHash: true,' : '' .
+                $oldOwl . '
         });});';
         $script .= '</script>';
 
