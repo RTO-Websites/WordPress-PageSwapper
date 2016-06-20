@@ -14,7 +14,7 @@ use MagicAdminPage\MagicAdminPage;
  * Plugin Name:       PageSwapper
  * Plugin URI:        https://github.com/crazypsycho/WordPress-PageSwapper
  * Description:       Swap pages with transitions
- * Version:           1.1.0
+ * Version:           1.1.1
  * Author:            Sascha Hennemann
  * Author URI:        https://github.com/crazypsycho
  * License:           GPL-2.0+
