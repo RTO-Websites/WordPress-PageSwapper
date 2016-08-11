@@ -22,5 +22,8 @@
     "animate.css": "~3.4.0",
     "page-swapper": "*",
     "owl.carousel": "~2.0.0-beta.3"
+  },
+  "resolutions": {
+    "owl.carousel": "^2.1.6"
   }
 }
