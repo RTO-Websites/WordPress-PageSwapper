@@ -1,14 +1,14 @@
 <?php namespace Pub;
 
-    /**
-     * The public-facing functionality of the plugin.
-     *
-     * @link       https://github.com/crazypsycho
-     * @since      1.0.0
-     *
-     * @package    PageSwapper
-     * @subpackage PageSwapper/public
-     */
+/**
+ * The public-facing functionality of the plugin.
+ *
+ * @link       https://github.com/crazypsycho
+ * @since      1.0.0
+ *
+ * @package    PageSwapper
+ * @subpackage PageSwapper/public
+ */
 use MagicAdminPage\MagicAdminPage;
 
 /**
@@ -67,6 +67,14 @@ class PageSwapperPublic
 
         // Embed footerscript
         add_action( 'wp_footer', array ( $this, 'insertFooterScript' ) );
+
+        add_action( 'wpcf7_form_action_url', array( $this, 'removePswFromUrl' ) );
+    }
+
+    public function removePswFromUrl( $url ) {
+        $url = str_replace( array( '?pswLoad=1', '&pswLoad=1', '$pswLoad', '?pswLoad' ), '', $url );
+        $url = explode( '#', $url );
+        return $url[0];
     }
 
     /**
@@ -179,7 +187,7 @@ class PageSwapperPublic
             owlConfig: {' . $owlConfig . '},
             ' . ( $debug ? 'debug: true,' : '' )
             . (isset( $this->options['disableHash'] ) ? 'disableHash: true,' : '') .
-                $oldOwl . '
+            $oldOwl . '
         });});';
         $script .= '</script>';
 
