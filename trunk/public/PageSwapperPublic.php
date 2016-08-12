@@ -189,6 +189,12 @@ class PageSwapperPublic
             . (isset( $this->options['disableHash'] ) ? 'disableHash: true,' : '') .
             $oldOwl . '
         });});';
+
+        // fix for contact form 7
+        $script .= 'jQuery(document).on(\'psw-loadcomplete\', \'.psw-container\', function() {
+              if (typeof jQuery.fn.wpcf7InitForm != \'undefined\')
+                jQuery(\'.wpcf7-form\').wpcf7InitForm();
+               });';
         $script .= '</script>';
 
         $footer = $footer . $script;
