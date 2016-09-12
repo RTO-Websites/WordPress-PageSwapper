@@ -21,9 +21,6 @@
     "owlcarousel": "~1.3.2",
     "animate.css": "~3.4.0",
     "page-swapper": "*",
-    "owl.carousel": "~2.0.0-beta.3"
-  },
-  "resolutions": {
-    "owl.carousel": "^2.1.6"
+    "owl.carousel": "~2.1.6"
   }
 }
