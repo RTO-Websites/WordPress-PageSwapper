@@ -63,6 +63,10 @@ module.exports = (grunt) ->
             dest: '<%= appConfig.dest %>/js/page-swapper.min.js'
           },
           {
+            src: ['<%= appConfig.src %>/page-swapper/psw.owl.js']
+            dest: '<%= appConfig.dest %>/js/psw.owl.js'
+          },
+          {
             src: ['<%= appConfig.src %>/page-swapper/page-swapper.js']
             dest: '<%= appConfig.dest %>/js/page-swapper.js'
           },

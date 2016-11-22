@@ -146,6 +146,7 @@ class PageSwapperPublic
 
         if ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') {
             wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.js', array ( 'owl.carousel' ), $this->version, true );
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/psw.owl.js', array ( 'page-swapper' ), $this->version, true );
         } else {
             wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.min.js', null, $this->version, true );
         }
