@@ -1,5 +1,6 @@
 trunk/vendor
 trunk/bower_components
 trunk/node_modules
+trunk/build
 .svn
 .idea
