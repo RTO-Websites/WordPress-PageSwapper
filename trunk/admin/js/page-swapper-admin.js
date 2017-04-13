@@ -36,9 +36,12 @@
     /**
      * Set owl-config via presets
      */
-    $('#owl-slider-presets').on('change', function (e) {
-      var owlConfigElement = $('#owlConfig-' + $('#owl-slider-presets').data('lang'));
-      switch ($('#owl-slider-presets').val()) {
+    $(document).on('change', '#owl-slider-presets', function (e) {
+      //var owlConfigElement = $('#owlConfig-' + $('#owl-slider-presets').data('lang'));
+      var selectBox = $('#owl-slider-presets'),
+        owlConfigElement = selectBox.closest('.customize-control').find('textarea');
+
+      switch (selectBox.val()) {
         case 'fade':
           owlConfigElement.val("animateOut: 'fadeOut',\nanimateIn: 'fadeIn',");
           break;

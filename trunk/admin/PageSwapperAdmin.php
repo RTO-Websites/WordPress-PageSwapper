@@ -9,7 +9,8 @@
  * @package    PageSwapper
  * @subpackage PageSwapper/admin
  */
-use MagicAdminPage\MagicAdminPage;
+
+include_once( 'PageSwapperThemeCustomizer.php' );
 
 /**
  * The admin-specific functionality of the plugin.
@@ -55,60 +56,22 @@ class PageSwapperAdmin {
         $this->pluginName = $pluginName;
         $this->version = $version;
 
-        $pswAdminPage = new MagicAdminPage(
-            'page-swapper',
-            'PageSwapper',
-            'PageSwapper',
-            null,
-            'dashicons-admin-page'
-        );
 
-        $pswAdminPage->addFields( array(
-            'debugmode' => array(
-                'type' => 'checkbox',
-                'title' => __( 'Debug-Mode', $textdomain ),
-            ),
-            'useOldOwl' => array(
-                'type' => 'checkbox',
-                'title' => __( 'Use old owl-carousel (v1.3)', $textdomain ),
-            ),
-            'selector' => array(
-                'type' => 'text',
-                'title' => __( 'Selector', $textdomain ),
-                'default' => 'body',
-            ),
-            'owlConfig' => array(
-                'type' => 'textarea',
-                'title' => __( 'Owl-Slider-Config', $textdomain ),
-                'description' => '<b>' . __( 'Presets', $textdomain ) . '</b>:'
-                    . '<select id="owl-slider-presets" data-lang="' . get_locale() . '">
-                    <option value="">Slide (' . __( 'Default', $textdomain ) . ')</option>
-                    <option value="fade">Fade</option>
-                    <option value="slidevertical">SlideVertical</option>
-                    <option value="zoominout">Zoom In/out</option>
-                    </select>',
-                'class' => 'owl-slider-config',
-            ),
-            'owlDesc' => array(
-                'type' => 'description',
-                'title' => __( 'Description', $textdomain ),
-                'description' => __( 'You can use these options', $textdomain ) . ':<br />' .
-                    '<a href="http://www.owlcarousel.owlgraphic.com/docs/api-options.html" target="_blank">
-                OwlCarousel Options
-            </a>
-            <br />' .
-                    __( 'You can use these animations', $textdomain ) . ':<br />
-            <a href="http://daneden.github.io/animate.css/" target="_blank">
-                Animate.css
-            </a>
-        </div>',
-            ),
+        // add options to customizer
+        add_action( 'customize_register', array( new \PageSwapperThemeCustomizer(), 'actionCustomizeRegister' ) );
 
-            'disableHash' => array(
-                'type' => 'checkbox',
-                'title' => __( 'Disable hash', $textdomain ),
-            ),
-        ) );
+
+        // add menu page to link to customizer
+        add_action('admin_menu' , function() {
+            \add_menu_page(
+                'PageSwapper',
+                'PageSwapper',
+                'edit_theme_options',
+                'customize.php?return=/wp-admin/&autofocus[section]=pageswapper',
+                null,
+                'dashicons-admin-page'
+            );
+        });
     }
 
     /**

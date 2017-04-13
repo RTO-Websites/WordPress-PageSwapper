@@ -9,7 +9,6 @@
  * @package    PageSwapper
  * @subpackage PageSwapper/public
  */
-use MagicAdminPage\MagicAdminPage;
 
 /**
  * The public-facing functionality of the plugin.
@@ -21,8 +20,7 @@ use MagicAdminPage\MagicAdminPage;
  * @subpackage PageSwapper/public
  * @author     Sascha Hennemann <shennemann@rto.de>
  */
-class PageSwapperPublic
-{
+class PageSwapperPublic {
 
     /**
      * The ID of this plugin.
@@ -58,15 +56,23 @@ class PageSwapperPublic
      * @param      string $pluginName The name of the plugin.
      * @param      string $version The version of this plugin.
      */
-    public function __construct( $pluginName, $version )
-    {
+    public function __construct( $pluginName, $version ) {
 
         $this->pluginName = $pluginName;
         $this->version = $version;
-        $this->options = MagicAdminPage::getOption('page-swapper');
+        //$this->options = MagicAdminPage::getOption('page-swapper');
+
+
+        $this->options = array(
+            'debugmode' => get_theme_mod( 'pageswapper_debugmode', false ),
+            'useOldOwl' => get_theme_mod( 'pageswapper_useOldOwl', false ),
+            'selector' => get_theme_mod( 'pageswapper_selector', 'body' ),
+            'owlConfig' => get_theme_mod( 'pageswapper_owlConfig', '' ),
+            'disableHash' => get_theme_mod( 'pageswapper_disableHash', false ),
+        );
 
         // Embed footerscript
-        add_action( 'wp_footer', array ( $this, 'insertFooterScript' ) );
+        add_action( 'wp_footer', array( $this, 'insertFooterScript' ) );
 
         add_action( 'wpcf7_form_action_url', array( $this, 'removePswFromUrl' ) );
     }
@@ -82,8 +88,7 @@ class PageSwapperPublic
      *
      * @since    1.0.0
      */
-    public function enqueueStyles()
-    {
+    public function enqueueStyles() {
 
         /**
          * This function is provided for demonstration purposes only.
@@ -111,7 +116,7 @@ class PageSwapperPublic
             wp_enqueue_style( 'owl.carousel', $buildPath . '/css/owl.carousel.min.css' );
             wp_enqueue_style( 'owl.carousel.theme', $buildPath . '/css/owl.theme.default.min.css' );
         }
-        wp_enqueue_style( 'animate.css', $buildPath .  '/css/animate.min.css' );
+        wp_enqueue_style( 'animate.css', $buildPath . '/css/animate.min.css' );
     }
 
     /**
@@ -119,8 +124,7 @@ class PageSwapperPublic
      *
      * @since    1.0.0
      */
-    public function enqueueScripts()
-    {
+    public function enqueueScripts() {
 
         /**
          * This function is provided for demonstration purposes only.
@@ -144,9 +148,9 @@ class PageSwapperPublic
             wp_enqueue_script( 'owl.carousel', $buildPath . '/js/owl.carousel.min.js', array( 'jquery' ) );
         }
 
-        if ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') {
-            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.js', array ( 'owl.carousel' ), $this->version, true );
-            wp_enqueue_script( 'page-swapper', $buildPath . '/js/psw.owl.js', array ( 'page-swapper' ), $this->version, true );
+        if ( !empty( $this->options['debugmode'] ) ) {
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.js', array( 'owl.carousel' ), $this->version, true );
+            wp_enqueue_script( 'page-swapper', $buildPath . '/js/psw.owl.js', array( 'page-swapper' ), $this->version, true );
         } else {
             wp_enqueue_script( 'page-swapper', $buildPath . '/js/page-swapper.min.js', null, $this->version, true );
         }
@@ -157,9 +161,8 @@ class PageSwapperPublic
      *
      * @param string $footer
      */
-    public function insertFooterscript( $footer )
-    {
-        $current_site = str_replace( get_bloginfo( 'wpurl' ), '', $_SERVER[ 'REQUEST_URI' ] );
+    public function insertFooterscript( $footer ) {
+        $current_site = str_replace( get_bloginfo( 'wpurl' ), '', $_SERVER['REQUEST_URI'] );
         $current_site = substr( $current_site, 1, strlen( $current_site ) - 1 );
 
         if ( empty( $current_site ) ) {
@@ -168,26 +171,27 @@ class PageSwapperPublic
 
         // get options
         $options = $this->options;
-        $selector = !empty($options['selector']) ? $options['selector'] : 'body';
-        $owlConfig = !empty($options['owlConfig']) ? $options['owlConfig'] : '';
-        $oldOwl = !empty($options['useOldOwl']) ? 'owlVersion: 1,' : '';
+        $selector = !empty( $options['selector'] ) ? $options['selector'] : 'body';
+        $owlConfig = !empty( $options['owlConfig'] ) ? $options['owlConfig'] : '';
+        $oldOwl = !empty( $options['useOldOwl'] ) ? 'owlVersion: 1,' : '';
 
         $debug = false;
 
-        if ( ( !empty( $this->options['debugmode'] ) && $this->options['debugmode'] == 'on') ||
-            isset( $_REQUEST['pswdebug'] ) ) {
+        if ( ( !empty( $this->options['debugmode'] ) ) ||
+            isset( $_REQUEST['pswdebug'] )
+        ) {
             $debug = true;
         }
 
         // minify
-        $owlConfig = preg_replace("/^\s{2,}?([^,]+?),?$/m", ',', $owlConfig);
-        $owlConfig = preg_replace("/(\r?\n?)*/", '', $owlConfig);
+        $owlConfig = preg_replace( "/^\s{2,}?([^,]+?),?$/m", ',', $owlConfig );
+        $owlConfig = preg_replace( "/(\r?\n?)*/", '', $owlConfig );
 
         $script = '<script>';
         $script .= 'jQuery(function($) {$("' . $selector . '").pageSwapper({
             owlConfig: {' . $owlConfig . '},
             ' . ( $debug ? 'debug: true,' : '' )
-            . (isset( $this->options['disableHash'] ) ? 'disableHash: true,' : '') .
+            . ( !empty( $this->options['disableHash'] ) ? 'disableHash: true,' : '' ) .
             $oldOwl . '
         });});';
 
