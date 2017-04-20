@@ -62,16 +62,17 @@ class PageSwapperAdmin {
 
 
         // add menu page to link to customizer
-        add_action('admin_menu' , function() {
+        add_action( 'admin_menu', function () {
+            $returnUrl = urlencode( $_SERVER['REQUEST_URI'] );
             \add_menu_page(
                 'PageSwapper',
                 'PageSwapper',
                 'edit_theme_options',
-                'customize.php?return=/wp-admin/&autofocus[section]=pageswapper',
+                'customize.php?return=' . $returnUrl . '&autofocus[section]=pageswapper',
                 null,
                 'dashicons-admin-page'
             );
-        });
+        } );
     }
 
     /**
