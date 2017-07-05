@@ -32,7 +32,8 @@ class PageSwapperThemeCustomizer {
                     'selector' => array(
                         'type' => 'text',
                         'label' => __( 'Selector', $textdomain ),
-                        'default' => 'body',
+                        'default' => '#wrap',
+                        'description' => __('Specifies the element, which contains the contents of the sub-page.', $textdomain)
                     ),
                     'owlConfig' => array(
                         'type' => 'textarea',

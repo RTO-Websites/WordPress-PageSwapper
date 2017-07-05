@@ -73,8 +73,12 @@ class PageSwapperPublic {
 
         // Embed footerscript
         add_action( 'wp_footer', array( $this, 'insertFooterScript' ) );
-
         add_action( 'wpcf7_form_action_url', array( $this, 'removePswFromUrl' ) );
+
+        // do_action if page is loaded with ajax
+        if ( filter_has_var( INPUT_GET, 'pswLoad' ) ) {
+            do_action( 'pswload_ajax_render_page' );
+        }
     }
 
     public function removePswFromUrl( $url ) {
@@ -171,7 +175,7 @@ class PageSwapperPublic {
 
         // get options
         $options = $this->options;
-        $selector = !empty( $options['selector'] ) ? $options['selector'] : 'body';
+        $selector = !empty( $options['selector'] ) ? $options['selector'] : '#wrap';
         $owlConfig = !empty( $options['owlConfig'] ) ? $options['owlConfig'] : '';
         $oldOwl = !empty( $options['useOldOwl'] ) ? 'owlVersion: 1,' : '';
 
