@@ -193,6 +193,7 @@ class PageSwapperPublic {
 
         $script = '<script>';
         $script .= 'jQuery(function($) {$("' . $selector . '").pageSwapper({
+            selector: "'.$selector.'",
             owlConfig: {' . $owlConfig . '},
             ' . ( $debug ? 'debug: true,' : '' )
             . ( !empty( $this->options['disableHash'] ) ? 'disableHash: true,' : '' ) .
