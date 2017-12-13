@@ -1,7 +1,7 @@
 === Plugin Name ===
-Contributors: crazypsycho
-Donate link: https://github.com/crazypsycho
-Tags: page transition, page animation, slider, ajax
+Contributors: rtowebsites
+Donate link: https://www.rto.de
+Tags: page transition, page animation, slider, ajax, rto, rto.de
 Requires at least: 3.0.1
 Tested up to: 4.8
 Stable tag: 4.3
@@ -17,11 +17,11 @@ You can use a lot of different animations. It use animate.css.
 http://daneden.github.io/animate.css/
 
 Also every option of Owl-Carousel is usable:
-http://www.owlcarousel.owlgraphic.com/
+https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
 
 
 You can help to develop on
-https://github.com/crazypsycho/WordPress-PageSwapper
+https://github.com/RTO-Websites/page-swapper
 
 
 == Installation ==

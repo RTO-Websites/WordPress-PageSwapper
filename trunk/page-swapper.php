@@ -6,17 +6,17 @@ use Inc\PageSwapperDeactivator;
 use MagicAdminPage\MagicAdminPage;
 
 /**
- * @link              https://github.com/crazypsycho
+ * @link              https://github.com/RTO-Websites/page-swapper
  * @since             1.0.0
  * @package           PageSwapper
  *
  * @wordpress-plugin
  * Plugin Name:       PageSwapper
- * Plugin URI:        https://github.com/crazypsycho/WordPress-PageSwapper
+ * Plugin URI:        https://github.com/RTO-Websites/page-swapper
  * Description:       Swap pages with transitions
- * Version:           1.2.4
+ * Version:           1.2.5
  * Author:            Sascha Hennemann
- * Author URI:        https://github.com/crazypsycho
+ * Author URI:        https://www.rto.de
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       page-swapper
