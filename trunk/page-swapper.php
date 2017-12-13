@@ -15,7 +15,7 @@ use MagicAdminPage\MagicAdminPage;
  * Plugin URI:        https://github.com/RTO-Websites/page-swapper
  * Description:       Swap pages with transitions
  * Version:           1.2.5
- * Author:            Sascha Hennemann
+ * Author:            RTO GmbH
  * Author URI:        https://www.rto.de
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
