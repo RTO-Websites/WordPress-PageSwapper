@@ -62,6 +62,9 @@ args has the following information:
 
 
 == Changelog ==
+= 1.2.6 =
+* Works better with elementor
+
 = 1.0.6 =
 * Some fixes
 

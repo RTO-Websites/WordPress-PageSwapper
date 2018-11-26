@@ -191,20 +191,28 @@ class PageSwapperPublic {
         $owlConfig = preg_replace( "/^\s{2,}?([^,]+?),?$/m", ',', $owlConfig );
         $owlConfig = preg_replace( "/(\r?\n?)*/", '', $owlConfig );
 
+
         $script = '<script>';
         $script .= 'jQuery(function($) {$("' . $selector . '").pageSwapper({
-            selector: "'.$selector.'",
+            selector: "' . $selector . '",
             owlConfig: {' . $owlConfig . '},
             ' . ( $debug ? 'debug: true,' : '' )
             . ( !empty( $this->options['disableHash'] ) ? 'disableHash: true,' : '' ) .
             $oldOwl . '
         });});';
 
+        $script .= 'jQuery(document).on(\'psw-loadcomplete\', \'.psw-container\', function(e, args) {';
+
         // fix for contact form 7
-        $script .= 'jQuery(document).on(\'psw-loadcomplete\', \'.psw-container\', function() {
-              if (typeof jQuery.fn.wpcf7InitForm != \'undefined\')
-                jQuery(\'.wpcf7-form\').wpcf7InitForm();
-               });';
+        $script .= 'if (typeof jQuery.fn.wpcf7InitForm != \'undefined\')
+                jQuery(\'.wpcf7-form\').wpcf7InitForm();';
+
+        // get post-css for elementor pages
+        if ( defined( 'ELEMENTOR_VERSION' ) ) {
+            $script .= file_get_contents( dirname( __FILE__ ) . '/js/elementor-fixes.js' );
+        }
+
+        $script .= '});';
         $script .= '</script>';
 
         $footer = $footer . $script;
