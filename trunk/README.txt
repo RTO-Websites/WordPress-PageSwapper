@@ -62,6 +62,9 @@ args has the following information:
 
 
 == Changelog ==
+= 1.2.7 =
+* Update owl.carousel to 2.3.4
+
 = 1.2.6 =
 * Works better with elementor
 
