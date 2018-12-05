@@ -14,7 +14,7 @@ use MagicAdminPage\MagicAdminPage;
  * Plugin Name:       PageSwapper
  * Plugin URI:        https://github.com/RTO-Websites/page-swapper
  * Description:       Swap pages with transitions
- * Version:           1.2.7
+ * Version:           1.2.8
  * Author:            RTO GmbH
  * Author URI:        https://www.rto.de
  * License:           GPL-2.0+
