@@ -62,6 +62,9 @@ args has the following information:
 
 
 == Changelog ==
+= 1.2.8 =
+* Go back to owl.carousel 2.2.1 cause nesting bug
+
 = 1.2.7 =
 * Update owl.carousel to 2.3.4
 
